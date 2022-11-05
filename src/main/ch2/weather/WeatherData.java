@@ -1,14 +1,46 @@
 package main.ch2.weather;
 
-public class WeatherData {
 
-    public void measurementsChanged(){
-        float temp = getTemperature();
-        float humidity = getHumidity();
-        float pressure = getPressure();
+import java.util.ArrayList;
+import java.util.List;
 
-        currentConditionsDisplay.update(temp, humidity, pressure);
-        statisticsDisplay.update(temp, humidity, pressure);
-        forecastDisplay.update(temp, humidity, pressure);
+public class WeatherData implements Subject {
+
+    private List<Observer> observers;
+    private float temp;
+    private float humidity;
+    private float pressure;
+
+    public WeatherData() {
+        observers = new ArrayList<Observer>();
     }
+
+    public void measurementsChanged() {
+        notifyObserver();
+    }
+
+    @Override
+    public void registerObserver(Observer o) {
+        observers.add(o);
+    }
+
+    @Override
+    public void removeObserver(Observer o) {
+        observers.remove(o);
+    }
+
+    @Override
+    public void notifyObserver() {
+        for (Observer observer : observers) {
+            observer.update(temp, humidity, pressure);
+        }
+    }
+    public void setMeasurements(float temp, float humidity, float pressure){
+        this.temp = temp;
+        this.humidity = humidity;
+        this.pressure = pressure;
+        measurementsChanged();
+    }
+
+    //기타 weather method
 }
