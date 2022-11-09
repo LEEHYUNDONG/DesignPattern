@@ -1,0 +1,12 @@
+.DS_Store
+.idea/libraries/
+.idea/misc.xml
+.idea/modules.xml
+.idea/runConfigurations.xml
+.idea/uiDesigner.xml
+.idea/vcs.xml
+DesignPattern.iml
+lib/
+out/
+src/.DS_Store
+src/main/.DS_Store
