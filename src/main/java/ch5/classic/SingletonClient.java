@@ -1,4 +1,4 @@
-package main.ch5.classic;
+package main.java.ch5.classic;
 
 public class SingletonClient {
     public static void main(String[] args) {
