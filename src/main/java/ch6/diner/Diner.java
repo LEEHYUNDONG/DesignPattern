@@ -1,4 +1,4 @@
-package main.java.ch6.diner;
+package ch6.diner;
 
 public class Diner {
     public static void main(String[] args) {
