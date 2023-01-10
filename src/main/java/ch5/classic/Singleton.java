@@ -1,4 +1,4 @@
-package main.java.ch5.classic;
+package ch5.classic;
 
 public class Singleton {
     private static Singleton uniqueInstance;
