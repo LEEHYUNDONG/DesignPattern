@@ -2,12 +2,12 @@ package ch9.iterator.dinnermergeri;
 
 import java.util.Iterator;
 
-public class DinerMenu implements Menu{
+public class DinerMenu implements Menu {
     static final int MAX_ITEMS = 6;
     int numberOfItems = 0;
     MenuItem[] menuItems;
 
-    public DinerMenu(){
+    public DinerMenu() {
         menuItems = new MenuItem[MAX_ITEMS];
 
         addItem("Vegetarian BLT",
@@ -25,6 +25,7 @@ public class DinerMenu implements Menu{
                 "Spaghetti with Marinara Sauce, and a slice of sourdough bread",
                 true, 3.89);
     }
+
     public void addItem(String name, String description,
                         boolean vegetarian, double price)
     {
@@ -41,9 +42,10 @@ public class DinerMenu implements Menu{
         return menuItems;
     }
 
-    @Override
     public Iterator<MenuItem> createIterator() {
         return new DinerMenuIterator(menuItems);
         //return new AlternatingDinerMenuIterator(menuItems);
     }
+
+    // other menu methods here
 }

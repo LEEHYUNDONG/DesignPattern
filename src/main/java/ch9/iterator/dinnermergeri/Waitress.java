@@ -15,6 +15,7 @@ public class Waitress {
     // --- added 12/30/2016 - not in original code
     public void printMenu(int withNewConstructs) {
         ArrayList<MenuItem> breakfastItems = ((PancakeHouseMenu) pancakeHouseMenu).getMenuItems();
+
         //pMenu.forEach(m -> printMenuItem(m));
         for (MenuItem m : breakfastItems) {
             printMenuItem(m);
